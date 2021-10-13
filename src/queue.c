@@ -4,42 +4,83 @@
  * and open the template in the editor.
  */
 
-typedef struct Element Element;
-struct Element
-{
-    int nombre;
-    Element *suivant;
-};
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "queue.h"
 
-typedef struct File File;
-struct File
+void init_queue(Queue *q)
 {
-    Element *premier;
-};
 
-void enfiler(File *file, int nvNombre)
-{
-    Element *nouveau = malloc(sizeof(*nouveau));
-    if (file == NULL || nouveau == NULL)
+    for (int i = 0; i < QUEUE_MAX_SIZE; i++)
     {
-        exit(EXIT_FAILURE);
+        q->data[i] = -1;
     }
+    q->index = 0;
+};
 
-    nouveau->nombre = nvNombre;
-    nouveau->suivant = NULL;
+void enqueue(Queue *q, float value)
+{
 
-    if (file->premier != NULL) /* La file n'est pas vide */
+    if (q != NULL)
     {
-        /* On se positionne à la fin de la file */
-        Element *elementActuel = file->premier;
-        while (elementActuel->suivant != NULL)
+        if (q->index < QUEUE_MAX_SIZE)
         {
-            elementActuel = elementActuel->suivant;
+            q->data[q->index] = value;
+            q->index += 1;
+            printf("La valeur: %2.f à été ajoutée\n", value);
         }
-        elementActuel->suivant = nouveau;
+        else
+        {
+            printf("La file est pleine");
+        }
     }
-    else /* La file est vide, notre élément est le premier */
+};
+
+float dequeue(Queue *q)
+{
+    float dequeu = q->data[0];
+    if (q != NULL)
     {
-        file->premier = nouveau;
+        for (int i = 0; i <= q->index; i++)
+        {
+            q->data[i] = q->data[i+1];
+        }
+        return dequeu;
+        
     }
-}
+
+    return -1;
+};
+
+bool is_queue_empty(Queue *q)
+{
+    if (q != NULL)
+    {
+        if (q->index == 0)
+        {
+            printf("la pile est vide\n");
+            return true;
+        }
+        printf("la pile contient des valeurs\n");
+        return false;
+    }
+};
+
+float front(Queue *q){
+    if (q != NULL)
+    {
+        printf("La première valeur dans la file est: %.2f\n", q->data[0]);
+        return q->data[0];
+    }
+
+    return -1;
+    
+};
+
+void clear(Queue *q){
+    for (int i = 0; i < QUEUE_MAX_SIZE; i++)
+    {
+        q->data[i] = -1;
+    }
+};
