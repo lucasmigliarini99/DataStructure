@@ -14,7 +14,7 @@ void init_queue(Queue *q)
 
     for (int i = 0; i < QUEUE_MAX_SIZE; i++)
     {
-        q->data[i] = -1;
+        q->data[i] = 0.0;
     }
     q->index = 0;
 };
@@ -28,11 +28,6 @@ void enqueue(Queue *q, float value)
         {
             q->data[q->index] = value;
             q->index += 1;
-            printf("La valeur: %2.f à été ajoutée\n", value);
-        }
-        else
-        {
-            printf("La file est pleine");
         }
     }
 };
@@ -59,10 +54,8 @@ bool is_queue_empty(Queue *q)
     {
         if (q->index == 0)
         {
-            printf("la pile est vide\n");
             return true;
         }
-        printf("la pile contient des valeurs\n");
         return false;
     }
 };
@@ -70,7 +63,6 @@ bool is_queue_empty(Queue *q)
 float front(Queue *q){
     if (q != NULL)
     {
-        printf("La première valeur dans la file est: %.2f\n", q->data[0]);
         return q->data[0];
     }
 
@@ -78,9 +70,6 @@ float front(Queue *q){
     
 };
 
-void clear(Queue *q){
-    for (int i = 0; i < QUEUE_MAX_SIZE; i++)
-    {
-        q->data[i] = -1;
-    }
+void cleare(Queue *q){
+    init_queue(q);
 };
