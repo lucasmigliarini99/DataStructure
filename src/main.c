@@ -15,6 +15,8 @@
 #include <errno.h>
 #include <string.h>
 #include <assert.h>
+#include <CUnit/CUnit.h>
+#include <CUnit/Basic.h>
 
 #include "../include/stack.h"
 #include "../include/queue.h"
@@ -29,37 +31,44 @@ float test(int a) {
 
 }
 
-float testQueu(){
-    printf("////////////////////////////////////////\n");
-    printf("///////////////////Test Queu////////////////////\n");
+void testQueu(void){
+
     Queue *q = (Queue *)malloc(sizeof(Queue));
-    assert(q != NULL);
     init_queue(q);
-    assert(q->data[0] == 0);
     enqueue(q,1);
-    assert(q->data[0] == 1);
+
+    CU_ASSERT_EQUAL(q->data[0], 1);
     enqueue(q,2);
-    assert(q->data[1] == 2);
+    CU_ASSERT_EQUAL(q->data[1], 2);
     enqueue(q,3);
-    assert(q->data[2] == 3);
+    CU_ASSERT_EQUAL(q->data[2], 3);
     dequeue(q);
-    assert(q->data[0] == 2);
-    
-    assert(is_queue_empty(q) == false);
-    assert(front(q)==2);
-    
+    CU_ASSERT_EQUAL(q->data[0], 2);
+    CU_ASSERT_EQUAL(q->data[1], 3);
+    CU_ASSERT_EQUAL(is_queue_empty(q), false);
+    CU_ASSERT_EQUAL(front(q), 2);
+
     cleare(q);
-    assert(is_queue_empty(q) == true);
-     printf("///////////////////END Test Queu////////////////////\n");
+    CU_ASSERT_EQUAL(is_queue_empty(q),true);
 }
 
+int init(void){
+
+    return 0;
+}
+
+int clear_up(void){
+    return 0;
+}
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-
-    testQueu();
+    CU_initialize_registry();
+     CU_Suite *suite = CU_add_suite("tests",init,clear_up);
+     CU_add_test(suite, "test queu",testQueu);
+     CU_basic_run_tests(); 
 
     return (EXIT_SUCCESS);
 }
