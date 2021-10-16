@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   queue.h
- * Author: aurelio
- *
+/**
+ * @file queue.h
+ * @author Julien Peyrol, Lucas Migliarini (peyrol.jul@gmail.com, l.migliarini@eleve.leschartreux.net)
+ * @version 0.1
+ * @date 2021-10-16
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdbool.h>
@@ -15,14 +13,13 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-
 #define QUEUE_MAX_SIZE 100
 
-typedef struct {
+typedef struct
+{
     float data[QUEUE_MAX_SIZE];
     int index;
 } Queue;
-
 
 #endif /* QUEUE_H */
 
@@ -33,4 +30,3 @@ float dequeue(Queue *q);
 bool is_queue_empty(Queue *q);
 float front(Queue *q);
 //void clear(Queue *q);
-

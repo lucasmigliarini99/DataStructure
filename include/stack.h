@@ -1,13 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   stack.h
- * Author: aurelio
- *
+/**
+ * @file stack.h
+ * @author Julien Peyrol, Lucas Migliarini (peyrol.jul@gmail.com, l.migliarini@eleve.leschartreux.net) 
+ * @version 0.1
+ * @date 2021-10-16
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdbool.h>
@@ -17,7 +15,8 @@
 
 #define STACK_MAX_SIZE 100
 
-typedef struct {
+typedef struct
+{
     float data[STACK_MAX_SIZE];
     int index;
 } Stack;
@@ -32,4 +31,3 @@ float peek(Stack *s); // aka top or front
 void dup(Stack *s);
 void swap(Stack *s);
 void clear(Stack *s);
-

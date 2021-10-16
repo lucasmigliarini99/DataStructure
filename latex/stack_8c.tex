@@ -1,0 +1,158 @@
+\hypertarget{stack_8c}{}\doxysection{src/stack.c File Reference}
+\label{stack_8c}\index{src/stack.c@{src/stack.c}}
+{\ttfamily \#include \char`\"{}../include/stack.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stack_8c_ae9d651d70562e77fa39681ccc4993bbf}{init\+\_\+stack}} (Stack $\ast$s)
+\begin{DoxyCompactList}\small\item\em Initialise la pile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_a43347ab7de63ecfb72ee0472db11f27f}{push\+\_\+stack}} (Stack $\ast$s, float value)
+\begin{DoxyCompactList}\small\item\em Insère une valeur en haut de la pile. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{stack_8c_ae061732709da8b2f34f5c0fd4ef0ad5d}{pop\+\_\+stack}} (Stack $\ast$s)
+\begin{DoxyCompactList}\small\item\em Enleve la valeur en haut de la pile. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{stack_8c_a18db937ce50647114171ae4b28676188}{is\+\_\+stack\+\_\+empty}} (Stack $\ast$s)
+\begin{DoxyCompactList}\small\item\em Vérifie si la pile est vide. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{stack_8c_ae7cb25b94bcf7fd9acb9fbb0d029a27c}{peek\+\_\+stack}} (Stack $\ast$s)
+\begin{DoxyCompactList}\small\item\em recupère la donnée du dessus sans des-\/emplier \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_a5956e1fd5023d42557f3e02dbbe011ac}{dump}} (Stack $\ast$s)
+\begin{DoxyCompactList}\small\item\em duplique le sommet de la pile \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_aa27246b3c1dec5924712f4bc1f325621}{swap}} (Stack $\ast$s)
+\begin{DoxyCompactList}\small\item\em échange les deux éléments au sommet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_a5aed2642dee126261be5f402645e87c8}{clear\+\_\+stack}} (Stack $\ast$s)
+\begin{DoxyCompactList}\small\item\em Vide la pile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stack_8c_a5aed2642dee126261be5f402645e87c8}\label{stack_8c_a5aed2642dee126261be5f402645e87c8}} 
+\index{stack.c@{stack.c}!clear\_stack@{clear\_stack}}
+\index{clear\_stack@{clear\_stack}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{clear\_stack()}{clear\_stack()}}
+{\footnotesize\ttfamily void clear\+\_\+stack (\begin{DoxyParamCaption}\item[{Stack $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Vide la pile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/$>$ nom de la pile \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_a5956e1fd5023d42557f3e02dbbe011ac}\label{stack_8c_a5956e1fd5023d42557f3e02dbbe011ac}} 
+\index{stack.c@{stack.c}!dump@{dump}}
+\index{dump@{dump}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily void dump (\begin{DoxyParamCaption}\item[{Stack $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+duplique le sommet de la pile 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/$>$ nom de la pile \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_ae9d651d70562e77fa39681ccc4993bbf}\label{stack_8c_ae9d651d70562e77fa39681ccc4993bbf}} 
+\index{stack.c@{stack.c}!init\_stack@{init\_stack}}
+\index{init\_stack@{init\_stack}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{init\_stack()}{init\_stack()}}
+{\footnotesize\ttfamily void init\+\_\+stack (\begin{DoxyParamCaption}\item[{Stack $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Initialise la pile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/$>$ nom de la pile \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_a18db937ce50647114171ae4b28676188}\label{stack_8c_a18db937ce50647114171ae4b28676188}} 
+\index{stack.c@{stack.c}!is\_stack\_empty@{is\_stack\_empty}}
+\index{is\_stack\_empty@{is\_stack\_empty}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{is\_stack\_empty()}{is\_stack\_empty()}}
+{\footnotesize\ttfamily bool is\+\_\+stack\+\_\+empty (\begin{DoxyParamCaption}\item[{Stack $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Vérifie si la pile est vide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/$>$ nom de la pile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/$>$ la pile est vide 
+
+false -\/$>$ la pile n\textquotesingle{}est pas vide 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8c_ae7cb25b94bcf7fd9acb9fbb0d029a27c}\label{stack_8c_ae7cb25b94bcf7fd9acb9fbb0d029a27c}} 
+\index{stack.c@{stack.c}!peek\_stack@{peek\_stack}}
+\index{peek\_stack@{peek\_stack}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{peek\_stack()}{peek\_stack()}}
+{\footnotesize\ttfamily float peek\+\_\+stack (\begin{DoxyParamCaption}\item[{Stack $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+recupère la donnée du dessus sans des-\/emplier 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/$>$ nom de la pile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float -\/$>$ valeur récupérée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8c_ae061732709da8b2f34f5c0fd4ef0ad5d}\label{stack_8c_ae061732709da8b2f34f5c0fd4ef0ad5d}} 
+\index{stack.c@{stack.c}!pop\_stack@{pop\_stack}}
+\index{pop\_stack@{pop\_stack}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{pop\_stack()}{pop\_stack()}}
+{\footnotesize\ttfamily float pop\+\_\+stack (\begin{DoxyParamCaption}\item[{Stack $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Enleve la valeur en haut de la pile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/$>$ nom de la pîle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float -\/$>$ valeur enlevée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8c_a43347ab7de63ecfb72ee0472db11f27f}\label{stack_8c_a43347ab7de63ecfb72ee0472db11f27f}} 
+\index{stack.c@{stack.c}!push\_stack@{push\_stack}}
+\index{push\_stack@{push\_stack}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{push\_stack()}{push\_stack()}}
+{\footnotesize\ttfamily void push\+\_\+stack (\begin{DoxyParamCaption}\item[{Stack $\ast$}]{s,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Insère une valeur en haut de la pile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/$>$ nom de la pile \\
+\hline
+{\em value} & -\/$>$ valeur à inserer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_aa27246b3c1dec5924712f4bc1f325621}\label{stack_8c_aa27246b3c1dec5924712f4bc1f325621}} 
+\index{stack.c@{stack.c}!swap@{swap}}
+\index{swap@{swap}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{Stack $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+échange les deux éléments au sommet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/$>$ nom de la pile \\
+\hline
+\end{DoxyParams}

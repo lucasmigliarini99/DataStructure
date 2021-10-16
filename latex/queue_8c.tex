@@ -1,0 +1,149 @@
+\hypertarget{queue_8c}{}\doxysection{src/queue.c File Reference}
+\label{queue_8c}\index{src/queue.c@{src/queue.c}}
+
+
+Fonctions afin d\textquotesingle{}initialiser une file et de lui ajouter ou enlever des valeurs.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/queue.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{queue_8c_a25919c655a65e609b77096197881ec15}{init\+\_\+queue}} (Queue $\ast$q)
+\begin{DoxyCompactList}\small\item\em initialise une file \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8c_aee4cdc64e4fb038915201bb5f481dcc0}{enqueue}} (Queue $\ast$q, float value)
+\begin{DoxyCompactList}\small\item\em ajoute une valeur dans la queue \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{queue_8c_a963c35fdb8a91292169e3c65dfa6b56b}{dequeue}} (Queue $\ast$q)
+\begin{DoxyCompactList}\small\item\em enleve la valeur au début de la file \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{queue_8c_a813806bdcfc85411e001285c7607f3ef}{is\+\_\+queue\+\_\+empty}} (Queue $\ast$q)
+\begin{DoxyCompactList}\small\item\em vérifie si la file est pleine \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{queue_8c_a0285b50c50dd0dcc29b712684d2569c7}{front}} (Queue $\ast$q)
+\begin{DoxyCompactList}\small\item\em Retourne la premiere valeur de la file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8c_ae7b72ceb1e144b32ee4b61061df360af}{cleare}} (Queue $\ast$q)
+\begin{DoxyCompactList}\small\item\em vide la file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fonctions afin d\textquotesingle{}initialiser une file et de lui ajouter ou enlever des valeurs. 
+
+\begin{DoxyAuthor}{Author}
+Julien Peyrol, Lucas Migliarini (\href{mailto:peyrol.jul@gmail.com}{\texttt{ peyrol.\+jul@gmail.\+com}}, \href{mailto:l.migliarini@eleve.leschartreux.net}{\texttt{ l.\+migliarini@eleve.\+leschartreux.\+net}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/10-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{queue_8c_ae7b72ceb1e144b32ee4b61061df360af}\label{queue_8c_ae7b72ceb1e144b32ee4b61061df360af}} 
+\index{queue.c@{queue.c}!cleare@{cleare}}
+\index{cleare@{cleare}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{cleare()}{cleare()}}
+{\footnotesize\ttfamily void cleare (\begin{DoxyParamCaption}\item[{Queue $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+vide la file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & -\/$>$ nom de la file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8c_a963c35fdb8a91292169e3c65dfa6b56b}\label{queue_8c_a963c35fdb8a91292169e3c65dfa6b56b}} 
+\index{queue.c@{queue.c}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily float dequeue (\begin{DoxyParamCaption}\item[{Queue $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+enleve la valeur au début de la file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & -\/$>$ nom de la file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float -\/$>$ valeur enlevée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{queue_8c_aee4cdc64e4fb038915201bb5f481dcc0}\label{queue_8c_aee4cdc64e4fb038915201bb5f481dcc0}} 
+\index{queue.c@{queue.c}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily void enqueue (\begin{DoxyParamCaption}\item[{Queue $\ast$}]{q,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+ajoute une valeur dans la queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & -\/$>$ nom de la queue \\
+\hline
+{\em value} & -\/$>$ valeur ajoutée \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8c_a0285b50c50dd0dcc29b712684d2569c7}\label{queue_8c_a0285b50c50dd0dcc29b712684d2569c7}} 
+\index{queue.c@{queue.c}!front@{front}}
+\index{front@{front}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily float front (\begin{DoxyParamCaption}\item[{Queue $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+Retourne la premiere valeur de la file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & -\/$>$ nom de la file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float -\/$>$ donne la valeur au début la file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{queue_8c_a25919c655a65e609b77096197881ec15}\label{queue_8c_a25919c655a65e609b77096197881ec15}} 
+\index{queue.c@{queue.c}!init\_queue@{init\_queue}}
+\index{init\_queue@{init\_queue}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{init\_queue()}{init\_queue()}}
+{\footnotesize\ttfamily void init\+\_\+queue (\begin{DoxyParamCaption}\item[{Queue $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+initialise une file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & -\/$>$ nom de la file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8c_a813806bdcfc85411e001285c7607f3ef}\label{queue_8c_a813806bdcfc85411e001285c7607f3ef}} 
+\index{queue.c@{queue.c}!is\_queue\_empty@{is\_queue\_empty}}
+\index{is\_queue\_empty@{is\_queue\_empty}!queue.c@{queue.c}}
+\doxysubsubsection{\texorpdfstring{is\_queue\_empty()}{is\_queue\_empty()}}
+{\footnotesize\ttfamily bool is\+\_\+queue\+\_\+empty (\begin{DoxyParamCaption}\item[{Queue $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+vérifie si la file est pleine 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & -\/$>$ nom de la file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/$>$ la file est vide 
+
+false -\/$>$ la file n\textquotesingle{}est pas vide 
+\end{DoxyReturn}
