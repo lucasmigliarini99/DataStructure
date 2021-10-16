@@ -60,6 +60,7 @@ float pop_stack(Stack *s)
     if (s->index != -1)
     {
         float data = s->data[s->index];
+        s->data[s->index] = 0;
         printf("La valeur enlevée est %.2f.\n", data);
         s->index -= 1;
         return data;
@@ -82,10 +83,12 @@ bool is_stack_empty(Stack *s)
 {
     if (s->index == -1)
     {
+        printf("La pile est vide\n");
         return true;
     }
     else
     {
+        printf("La pile n'est pas vide\n");
         return false;
     }
 }
@@ -157,5 +160,13 @@ void clear_stack(Stack *s)
     for (int i = 0; i < STACK_MAX_SIZE; i++)
     {
         s->data[i] = 0.0;
+    }
+}
+
+void printStack(Stack *s)
+{
+    for (int i = 0; i <= s->index; i++)
+    {
+        printf("%.2f\n", s->data[i]);
     }
 }
