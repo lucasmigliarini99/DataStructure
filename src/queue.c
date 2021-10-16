@@ -115,7 +115,7 @@ float front(Queue *q)
  * @param q -> nom de la file
  */
 
-void cleare(Queue *q)
+void clear_queue(Queue *q)
 {
     init_queue(q);
 };

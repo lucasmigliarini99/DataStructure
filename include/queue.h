@@ -29,4 +29,4 @@ float dequeue(Queue *q);
 
 bool is_queue_empty(Queue *q);
 float front(Queue *q);
-//void clear(Queue *q);
+void clear_queue(Queue *q);

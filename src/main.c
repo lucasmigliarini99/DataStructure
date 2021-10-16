@@ -19,16 +19,8 @@
 
 #include "../include/stack.h"
 #include "../include/queue.h"
+#include "../include/heap.h"
 
-float test(int a) {
-    errno = a;
-    assert(a == 5);
-    int errnum = errno;
-    fprintf(stderr, "Value of errno: %d\n", errnum);
-    perror("Error printed by perror");
-    fprintf(stderr, "Error opening file: %s\n", strerror(errnum));
-
-}
 
 void testQueu(void){
 
@@ -47,8 +39,57 @@ void testQueu(void){
     CU_ASSERT_EQUAL(is_queue_empty(q), false);
     CU_ASSERT_EQUAL(front(q), 2);
 
-    cleare(q);
+    clear_queue(q);
     CU_ASSERT_EQUAL(is_queue_empty(q),true);
+    //8 tests
+}
+
+void test_heap(void){
+
+    Heap heap;
+    init_heap(&heap);
+    CU_ASSERT(heap.index == 0);
+
+    push_heap(&heap, 5);
+    CU_ASSERT(heap.data[0] == 5);    
+    push_heap(&heap, 25.0);
+    push_heap(&heap, 18.0);
+    push_heap(&heap, 2);
+    push_heap(&heap, 8);
+
+    float popedVar = pop_heap(&heap);
+    CU_ASSERT(popedVar == 2);
+    CU_ASSERT(peek_heap(&heap) == 5 );
+
+    CU_ASSERT(is_heap_empty(&heap) == false);
+
+    CU_ASSERT(replace_heap(&heap, 1) == 5);
+    CU_ASSERT(peek_heap(&heap) == 1 );
+
+    clear_heap(&heap);
+    CU_ASSERT(heap.index == 0);
+    //8 tests
+}
+
+void test_stack(void){
+    Stack *s = (Stack *)malloc(sizeof(Stack));
+    init_stack(s);
+    CU_ASSERT_EQUAL(is_stack_empty(s), true);
+    push_stack(s,1);
+    CU_ASSERT_EQUAL(s->data[0], 1);
+    push_stack(s,2);
+    CU_ASSERT_EQUAL(s->data[1], 2);
+    push_stack(s,3);
+    CU_ASSERT_EQUAL(s->data[2], 3);
+    pop_stack(s);
+    CU_ASSERT_EQUAL(s->data[2], 0);
+    dump(s);
+    CU_ASSERT_EQUAL(s->data[2], 2);
+    swap(s);
+    CU_ASSERT_EQUAL(s->data[1], 2);
+    clear_stack(s);
+    CU_ASSERT_EQUAL(is_stack_empty(s),true);
+    //8 tests
 }
 
 int init(void){
@@ -67,6 +108,8 @@ int main(int argc, char** argv) {
     CU_initialize_registry();
      CU_Suite *suite = CU_add_suite("tests",init,clear_up);
      CU_add_test(suite, "test queu",testQueu);
+     CU_add_test(suite, "test heap",test_heap);
+     CU_add_test(suite, "test heap",test_stack);
      CU_basic_run_tests(); 
 
     return (EXIT_SUCCESS);

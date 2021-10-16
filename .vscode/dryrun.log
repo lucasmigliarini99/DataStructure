@@ -1,0 +1,15 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/student/Desktop/tp_c/dataStructure'
+ 
+find: 'lib': No such file or directory
+ 
+mkdir -p output
+gcc -Wall -Wextra -g -Iinclude -c src/array_list.c  -o src/array_list.o
+gcc -Wall -Wextra -g -Iinclude -c src/heap.c  -o src/heap.o
+gcc -Wall -Wextra -g -Iinclude -c src/main.c  -o src/main.o
+gcc -Wall -Wextra -g -Iinclude -c src/queue.c  -o src/queue.o
+gcc -Wall -Wextra -g -Iinclude -c src/stack.c  -o src/stack.o
+gcc -Wall -Wextra -g -Iinclude -o output/main src/array_list.o src/heap.o src/main.o src/queue.o src/stack.o -lcunit 
+echo Executing 'all' complete!
+make: Leaving directory '/home/student/Desktop/tp_c/dataStructure'
+ 

@@ -39,6 +39,7 @@ void push_stack(Stack *s, float value)
     {
         s->index += 1;
         s->data[s->index] = value;
+        
         printf("La valeur ajoutée est %.2f.\n", value);
     }
     else
@@ -157,10 +158,7 @@ void swap(Stack *s)
 
 void clear_stack(Stack *s)
 {
-    for (int i = 0; i < STACK_MAX_SIZE; i++)
-    {
-        s->data[i] = 0.0;
-    }
+    init_stack(s);
 }
 
 void printStack(Stack *s)
