@@ -20,6 +20,7 @@
 #include "../include/stack.h"
 #include "../include/queue.h"
 #include "../include/heap.h"
+#include "../include/array_list.h"
 
 
 void testQueu(void){
@@ -92,6 +93,26 @@ void test_stack(void){
     //8 tests
 }
 
+void test_array(void){
+    Array_list *maListe = (Array_list *)malloc(sizeof(Array_list));
+    init_array_list(maListe);
+    add(maListe, 2);
+    CU_ASSERT_EQUAL(maListe->data[0],2);
+    add(maListe, 5);
+    CU_ASSERT_EQUAL(maListe->data[1],5);
+    add(maListe, 8);
+    CU_ASSERT_EQUAL(maListe->data[2],8);
+    insert_at(maListe, 1, 10);
+    CU_ASSERT_EQUAL(maListe->data[1],10);
+    remove_at(maListe, 2);
+    CU_ASSERT_EQUAL(maListe->data[2],8);
+    get_at(maListe, 0);
+    CU_ASSERT_EQUAL(maListe->data[0],2);
+    clear_list(maListe);
+    CU_ASSERT_EQUAL(maListe->data[0],0);
+    // 7 tests
+}
+
 int init(void){
 
     return 0;
@@ -109,7 +130,8 @@ int main(int argc, char** argv) {
      CU_Suite *suite = CU_add_suite("tests",init,clear_up);
      CU_add_test(suite, "test queu",testQueu);
      CU_add_test(suite, "test heap",test_heap);
-     CU_add_test(suite, "test heap",test_stack);
+     CU_add_test(suite, "test stack",test_stack);
+     CU_add_test(suite, "test array list",test_array);
      CU_basic_run_tests(); 
 
     return (EXIT_SUCCESS);

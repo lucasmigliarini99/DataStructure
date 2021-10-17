@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2021
  * 
  */
-
+#include <stdio.h>
 #include "../include/stack.h"
 
 /**
@@ -40,11 +40,6 @@ void push_stack(Stack *s, float value)
         s->index += 1;
         s->data[s->index] = value;
         
-        printf("La valeur ajoutée est %.2f.\n", value);
-    }
-    else
-    {
-        printf("La pile est pleine.");
     }
 }
 
@@ -62,13 +57,8 @@ float pop_stack(Stack *s)
     {
         float data = s->data[s->index];
         s->data[s->index] = 0;
-        printf("La valeur enlevée est %.2f.\n", data);
         s->index -= 1;
         return data;
-    }
-    else
-    {
-        printf("La pile est vide.");
     }
 }
 
@@ -84,12 +74,10 @@ bool is_stack_empty(Stack *s)
 {
     if (s->index == -1)
     {
-        printf("La pile est vide\n");
         return true;
     }
     else
     {
-        printf("La pile n'est pas vide\n");
         return false;
     }
 }
@@ -107,12 +95,7 @@ float peek_stack(Stack *s)
     if (s->index != -1)
     {
         float data = s->data[s->index];
-        printf("La valeur est %.2f.\n", data);
         return data;
-    }
-    else
-    {
-        printf("La pile est vide.");
     }
 }
 
@@ -128,10 +111,6 @@ void dump(Stack *s)
     {
         push_stack(s, peek_stack(s));
     }
-    else
-    {
-        printf("La pile est vide.");
-    }
 }
 
 /**
@@ -146,8 +125,6 @@ void swap(Stack *s)
     valTemp = s->data[s->index];
     s->data[s->index] = s->data[s->index - 1];
     s->data[s->index - 1] = valTemp;
-    printf("La valeur au sommet est %.2f\n", s->data[s->index]);
-    printf("La valeur avant le sommet est %.2f\n", s->data[s->index - 1]);
 }
 
 /**

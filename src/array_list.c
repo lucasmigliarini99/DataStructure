@@ -46,7 +46,6 @@ void insert_at(Array_list *l, int position, float value)
         l->data[i] = l->data[i - 1];
     }
     l->data[position] = value;
-    printf("La valeur ajoutée est %.2f.\n", value);
     l->index += 1;
 }
 
@@ -61,7 +60,6 @@ void add(Array_list *l, float value)
 {
     l->data[l->index] = value;
     l->index += 1;
-    printf("La valeur ajoutée est %.2f.\n", value);
 }
 
 /**
@@ -74,7 +72,6 @@ void add(Array_list *l, float value)
 
 float remove_at(Array_list *l, int position)
 {
-    printf("La valeur enlevée est %.2f.\n", l->data[position]);
     float value = l->data[position];
     l->data[position] = 0.0;
     for (position + 1; position < ARRAY_LIST_MAX_SIZE; position++)
@@ -96,7 +93,6 @@ float get_at(Array_list *l, int position)
 {
     float value = l->data[position];
     return value;
-    printf("La valeur à cette position est %.2f.\n", value);
 }
 
 /**

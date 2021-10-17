@@ -15,7 +15,7 @@
 #include "../include/heap.h"
 
 /**
- * @brief 
+ * @brief initialise le tas
  * 
  * @param h 
  */
@@ -29,7 +29,7 @@ void init_heap(Heap *h){
 }
 
 /**
- * @brief 
+ * @brief Vérifie si le tas est vide
  * 
  * @param h 
  * @return true 
