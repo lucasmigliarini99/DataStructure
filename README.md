@@ -2,7 +2,7 @@
 
 *Auteurs : Lucas Migliarini et Julien Peyrol*
 
-Le but de ce projet est d'implémenterdifférentes fonctions permettant de manipuler des piles, des files, listes et tas. L’implémentation sera basée sur l’utilisation de tableaux.
+Le but de ce projet est d'implémenter différentes fonctions permettant de manipuler des piles, des files, listes et tas. L’implémentation sera basée sur l’utilisation de tableaux.
 
 ## Commande `make documentation`
 
