@@ -2,7 +2,7 @@
 
 *Auteurs : Lucas Migliarini et Julien Peyrol*
 
-Le but de ce projet est d'implémenter différentes fonctions permettant de chercher avec de la dichotomie, faire une algorithme glouton, et chercher le plus grand carré blanc sur une matrice.
+Le but de ce projet est d'implémenter différentes fonctions permettant de manipuler des piles, des files, listes et tas. L’implémentation sera basée sur l’utilisation de tableaux.
 
 ## Commande `make documentation`
 
@@ -13,8 +13,10 @@ make documentation
 ```
 ## Résultat attendus 
 
-Pour la recherche via dichotomie, il sera possible de chercher une valeur dans un tableau et la fonction retournera donc la position de la valeur dans le tableau.
+Pour la pile, il doit être possible de l'initialiser, ajouter des éléments, enlever des éléments, savoir si la pile est vide, de savoir quelle est la valeur au dessus de la pile, dupliquer la valeur du dessus, échanger les deux valeurs au dessus et de vider la pile.
 
-Pour l'algoritme glouton, il sera possible de ranger dans un sac à dos des poids en fonction de leur rapport qualité/prix. L'algorithme retournera le poids total du sac.
+Pour la file, il doit être possible de l'initialiser, ajouter des éléments, enlever des éléments, savoir si la file est vide, de savoir quelle est la valeur au début de file, et de vider la file.
 
-Pour le plus grand carré blanc, il sera possible de générer et d'affiche une matrice.
+Pour la liste, il doit être possible de l'initialiser, ajouter des éléments, ajouter des éléments à une position précise, enlever des éléments à une position précise, de savoir quelle est la valeur à une certaine position et de vider la liste.
+
+Pour le tas, il doit être possible de l'initialiser, savoir si le tas est vide, ajouter des éléments, enlever des éléments, de remplacer l'élément principal avec une autre, de savoir quel est l'élément principal et de vider le tas.
